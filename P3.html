@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>حساب الفرق بين تاريخين</title>
+</head>
+<body>
+
+<p>التاريخ الأول: <input type="date" id="date1"></p>
+<p>التاريخ الثاني: <input type="date" id="date2"></p>
+<button onclick="calculateDifference()">احسب الفرق</button>
+<p id="result"></p>
+
+<script>
+function calculateDifference() {
+    var date1 = new Date(document.getElementById("date1").value);
+    var date2 = new Date(document.getElementById("date2").value);
+
+    var differenceInTime = date2.getTime() - date1.getTime();
+    var differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+    document.getElementById("result").innerHTML = "الفرق بين التاريخين هو " + differenceInDays + " يوم.";
+}
+</script>
+
+</body>
+</html>
